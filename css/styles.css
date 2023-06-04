@@ -166,8 +166,16 @@ transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
     bottom: 0;
     opacity: 1;
     border-radius: 2px;
-
+    bottom: -1px;
 } 
+
+.main-color-link{
+    color: #404bbf;
+}
+
+.portfolio-color-link{
+    color: #404bbf;
+    }
 
 .address {
     font-style: normal;
@@ -492,14 +500,14 @@ padding: 32px 16px;
     background-color: var(--link-color);
     transform: translateY(100%);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    padding: 40px 32px 164px;
+    padding: 40px 32px;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--footer-studio);
 }
 
-.portfolio-list-item:hover .portfolio-text-cover{
+.portfolio-list-item:hover .portfolio-text-cover, .portfolio-list-item:focus .portfolio-text-cover{
     transform: translateY(0);
 }
 /*----------FEATURE SECTION-------- */
@@ -523,7 +531,10 @@ padding: 32px 16px;
   border-radius: 4px;
   cursor: pointer;
 padding: 12px 24px;
-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-button:hover, .portfolio-button:focus{
@@ -551,7 +562,7 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cu
 }
 
 .is-hidden{
-    visibility: none;
+    visibility: hidden;
     opacity: 0;
     pointer-events: none;
 }
@@ -565,7 +576,8 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cu
     left:50%;
     transform: translate(-50%,-50%) scale(1);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    padding: 24px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden.modal{
@@ -573,6 +585,9 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cu
 }
 
 .backdrop-close-button{
+    position: absolute;
+    top: 24px;
+    right: 24px;
     width: 24px;
     height: 24px;
     border-radius: 50%;
@@ -582,7 +597,6 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cu
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    margin-left: auto;
     fill:var(--header-color);
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -590,4 +604,9 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cu
 .backdrop-close-button:hover,.backdrop-close-button:focus{
     background-color: var(--hover-color);
     fill: var(--hero-bkgrd-color);
+    border: none;
+}
+
+.backdrop-close-icon{
+ transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
